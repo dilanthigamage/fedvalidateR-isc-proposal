@@ -11,6 +11,7 @@ important because projects need to get up and running quickly.
  - [ ] License decisions
  - [ ] Reporting framework
 -->
+During Month 1, the Project Lead and Co-Lead will confirm responsibilities and user requirements, finalise the statistical and technical specification, agree the minimum viable product and site-results structure, and establish the public repository, open-source licence, issue tracker and automated testing framework.
 
 
 ## Technical delivery
@@ -21,6 +22,18 @@ provide at least a high-level description of the implementation.
 Including target dates is really important as you need to be committed
 and the ISC need to have a means of tracking delivery
 -->
+| Period | Activities and milestones | Lead |
+|---|---|---|
+| Month 1 | Finalise user requirements, specification, repository, licence and test plan. | Lead & Co-Lead |
+| Months 2–3 | Develop mapping, audit and local-validation functions; release alpha version. | Lead & RA |
+| Months 4–5 | Develop synthetic multisite datasets and site-results schema; verify statistical methods and implement automated tests. | Project team |
+| Month 6 | Develop compatibility checks, central synthesis, heterogeneity assessment and reproducible reporting; release beta version. | Project team |
+| Month 7 | Complete an end-to-end demonstration using a public real-world dataset partitioned into simulated sites. | Project team |
+| Month 8 | Conduct structured user testing and, subject to approvals, explore testing in Brazilian intensive care settings or within the ISARIC research network. | Co-Lead & Contributor |
+| Month 9 | Complete independent statistical verification and code review; resolve critical issues and prepare a release candidate. | Project team & independent reviewer |
+| Month 10 | Complete tutorials, contributor documentation and governance guidance; publish and disseminate the reproducible release. | Project team |
+
+Progress will be managed through monthly meetings, repository milestones, issue tracking, code review and continuous integration.
 
 ## Other aspects
 
@@ -37,6 +50,7 @@ to be shared quarterly on the R Consortium blog.
  - [ ] UseR!
  - [ ] ISC meetings
 -->
+Development will occur publicly on GitHub under an appropriate open-source licence, with issue tracking, contribution guidance and automated testing to support community participation. The core package will use synthetic data; any real-data testing will require relevant ethical, institutional and data-access approvals, with patient-level data remaining locally controlled. The team will disseminate major milestones and the final release through relevant R-community channels, including opportunities provided by the R Consortium. The Project Lead and Co-Lead will maintain the package after the grant, supported by automated tests, developer documentation and community contributions.
 
 ## Budget & funding plan
 
@@ -58,3 +72,13 @@ to the project and the project period. The ISC reserves the right to vet
 how funds are used for each project separately. If in doubt, please reach
 out to us.
 -->
+The project requests **US$5,500** over 10 months. Most funding supports research-assistant time for software development, synthetic-data preparation, testing, documentation and repository maintenance. Project-specific cloud services will support development and demonstration during the grant period, and user-testing support will enable structured feedback and refinement.
+
+| Budget item | Amount (US$) | Purpose |
+|---|---:|---|
+| Research Assistant | 4,500 | US$450/month × 10 months for programming, synthetic-data preparation, testing, documentation and demonstration support |
+| Project-specific cloud services | 500 | US$50/month × 10 months for development, testing and demonstration |
+| User-testing support | 500 | Structured testing, feedback collection and interface/documentation refinement |
+| **Total** | **5,500** | |
+
+Funding can be released against agreed milestones, with early payments supporting specification and local-workflow development, intermediate payments supporting synthetic evaluation and central synthesis, and final payments supporting user testing, verification, documentation and public release.

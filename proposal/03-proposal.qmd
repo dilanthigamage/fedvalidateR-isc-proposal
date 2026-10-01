@@ -16,6 +16,9 @@ section.
 
 Include concrete actions you will take and estimated timeline.
 -->
+**fedvalidateR** will provide a standardised workflow for federated external validation of existing prediction models for binary outcomes. A coordinating team will define the model, required variables, outcome, performance measures and permitted outputs. Each institution will run the same R workflow locally to check data compatibility, calculate predicted risks and performance measures, and create a standardised results object for local review. Approved aggregate outputs can then be combined to compare performance across sites, assess heterogeneity where appropriate and generate reproducible reports.
+
+Over 10 months, the project will develop and test the local and central workflows, synthetic multisite datasets, automated tests, documentation and an end-to-end public-data demonstration. For the R community, it will provide reusable functions, documented data structures, synthetic examples and reporting tools. It will complement rather than replace existing federated platforms and will not assume that aggregate outputs are automatically anonymous or legally compliant.
 
 ## Detail
 <!--
@@ -30,21 +33,43 @@ Depending on project type the detail section should include:
 <!--
 What is the smallest thing you can build that delivers value to your users?
 -->
+The minimum viable product will be a tested R package for federated external validation of fully specified prediction models and clinical risk scores for binary outcomes. It will include:
+
+- a machine-readable study specification covering the model, predictors, outcome, prediction horizon, analyses and permitted outputs;
+- tools for local variable mapping, cohort-flow documentation and data-quality assessment;
+- local calculation of prespecified discrimination, calibration and overall performance measures;
+- a versioned site-results object containing aggregate estimates, uncertainty measures, diagnostics, warnings and provenance information;
+- central functions for compatibility checking, comparison of site-specific performance, heterogeneity assessment where appropriate and reproducible reporting; and
+- synthetic multisite datasets, automated tests, tutorials and an end-to-end public-data demonstration.
+
+The initial release will not include model development, model updating, time-to-event outcomes or multicategory outcomes; these may be considered in future versions.
 
 ### Architecture
 
 <!--
 What does the high-level architecture look like?
 -->
+The workflow will have four components:
+
+1. **Coordination:** create a versioned study specification defining the model, required variables, outcome, analyses and permitted outputs.
+2. **Local analysis:** map a study-specific data extract to the shared specification, run data-quality checks, apply the fixed model and calculate the requested performance measures in R.
+3. **Review and export:** create a structured results object containing aggregate estimates, diagnostics, warnings and metadata for local review and approval.
+4. **Central synthesis:** import approved site-results objects, verify compatibility, compare performance across sites, assess heterogeneity and generate reproducible tables, figures and reports.
+
+Patient-level data and individual predictions will remain within each institution. Approved result objects will be transferred without requiring persistent connections between sites or dedicated federated servers.
 
 ### Assumptions
 
 <!--
 What assumptions are you making that, if proven false, would invalidate the project?
 -->
+The project assumes that sites can run R and prepare the required local data extract; the model is fully specified and legally available for implementation; variables, outcomes and prediction horizons can be mapped consistently; sites have sufficient events and non-events for the planned analyses; and institutions can approve release of aggregate outputs.
+
+The package will flag incompatible data or unreliable estimates rather than silently proceeding. Where site-specific mapping or data limitations prevent an analysis, the workflow will document the issue and permit compatible analyses to proceed without requiring all sites to share patient-level data.
 
 ### External dependencies
 
 <!--
 What external dependencies does the project have (e.g. libraries, services, other projects, etc.)?
 -->
+The package will use a limited set of established open-source R packages, with dependencies and version requirements documented and tested. Core delivery will not depend on DataSHIELD, a common data model, server infrastructure or access to confidential data. The demonstration will use publicly available data and an openly implementable or permission-cleared prediction model; any additional real-world testing will be conditional on relevant data-access and governance approvals.

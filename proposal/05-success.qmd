@@ -8,15 +8,26 @@ thorough understanding going in of what the risks are to delivery
 <!--
 What does success look like?
 -->
+The project will be complete when a publicly available, installable **fedvalidateR** package provides the specified local-validation and central-synthesis workflows, documented study and site-results structures, automated tests, tutorials, synthetic multisite examples and an end-to-end public-data demonstration. Additional testing in Brazilian intensive care or ISARIC settings will be subject to relevant approvals and is not required for core project completion.
 
 ## Measuring success
 <!--
 How will we know when success is achieved, what markers can we use
 along the way
 -->
+Success will be assessed by:
+
+- passing R package checks and all critical automated tests;
+- agreement with independent reference calculations within prespecified tolerances;
+- successful end-to-end analysis of at least three contrasting synthetic sites;
+- at least **80% test coverage** for core functions;
+- reproducible tutorials and demonstration materials;
+- structured feedback from at least **five intended users**, with critical issues resolved; and
+- public release of the package, code and documentation.
 
 ## Future work
 <!--
 How could this be extended / developed in the future by yourself
 and/or the community in general?
 -->
+Future releases may extend **fedvalidateR** to other outcome types, model recalibration, decision-curve analysis, additional disclosure controls and DataSHIELD integration. Further development may also include multilingual documentation and CRAN submission, guided by user and community feedback.
